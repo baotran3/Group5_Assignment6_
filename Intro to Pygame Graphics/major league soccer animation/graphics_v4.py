@@ -11,7 +11,6 @@ def create_window(size, title):
     pygame.display.set_caption(title)
     return screen, size
 # Window
-
 screen, screenSize = create_window((800, 600), "Major League Soccer")
 
 # Timer
