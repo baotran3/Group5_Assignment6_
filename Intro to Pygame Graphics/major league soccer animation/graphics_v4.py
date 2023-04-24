@@ -5,7 +5,7 @@ import random
 
 # Initialize game engine
 pygame.init()
-
+#looooool
 int x = 100
 # Window
 SIZE = (800, 600)
