@@ -1,8 +1,6 @@
 # Group: David Shahi, Bao Tran, Agam Sidhu
 # Imports
-import pygame
-import math
-import random
+import pygame, math, random
 
 # Initialize game engine
 pygame.init()
@@ -40,7 +38,7 @@ BRIGHT_YELLOW = (255, 244, 47)
 NIGHT_GRAY = (104, 98, 115)
 ck = (127, 33, 33)
 
-DARKNESS = pygame.Surface(SIZE)
+DARKNESS = pygame.Surface(screenSize)
 DARKNESS.set_alpha(200)
 DARKNESS.fill((0, 0, 0))
 
