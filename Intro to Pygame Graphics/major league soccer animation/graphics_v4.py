@@ -1,3 +1,4 @@
+# Group: David Shahi, Bao Tran, Agam Sidhu
 # Imports
 import pygame
 import math
@@ -6,13 +7,14 @@ import random
 # Initialize game engine
 pygame.init()
 
-
+def create_window(size, title):
+    pygame.init()
+    screen = pygame.display.set_mode(size)
+    pygame.display.set_caption(title)
+    return screen, size
 # Window
-SIZE = (800, 600)
-TITLE = "Major League Soccer"
-screen = pygame.display.set_mode(SIZE)
-pygame.display.set_caption(TITLE)
 
+screen, screenSize = create_window((800, 600), "Major League Soccer")
 
 # Timer
 clock = pygame.time.Clock()
@@ -46,30 +48,29 @@ SEE_THROUGH = pygame.Surface((800, 180))
 SEE_THROUGH.set_alpha(150)
 SEE_THROUGH.fill((124, 118, 135))
 
+#created a list of tuples so that we do not have to repeat function call "draw.ellipse"
+#by doing this we use a for loop to draw all the clouds and we keep the code clean
 def draw_cloud(x, y):
-    pygame.draw.ellipse(SEE_THROUGH, cloud_color, [x, y + 8, 10, 10])
-    pygame.draw.ellipse(SEE_THROUGH, cloud_color, [x + 6, y + 4, 8, 8])
-    pygame.draw.ellipse(SEE_THROUGH, cloud_color, [x + 10, y, 16, 16])
-    pygame.draw.ellipse(SEE_THROUGH, cloud_color, [x + 20, y + 8, 10, 10])
-    pygame.draw.rect(SEE_THROUGH, cloud_color, [x + 6, y + 8, 18, 10])
+    cloud_parts = [
+        (x, y + 8, 10, 10),
+        (x + 6, y + 4, 8, 8),
+        (x + 10, y, 16, 16),
+        (x + 20, y + 8, 10, 10),
+        (x + 6, y + 8, 18, 10)
+    ]
+    for part in cloud_parts:
+        pygame.draw.ellipse(SEE_THROUGH, cloud_color, part)
 
 
 # Config
 lights_on = True
 day = True
 
-stars = []
-for n in range(200):
-    x = random.randrange(0, 800)
-    y = random.randrange(0, 200)
-    r = random.randrange(1, 2)
-    stars.append([x, y, r, r])
+# use list comprehension for stars and clouds to condense into one line
 
-clouds = []
-for i in range(20):
-    x = random.randrange(-100, 1600)
-    y = random.randrange(0, 150)
-    clouds.append([x, y])
+stars = [[random.randrange(0, 800), random.randrange(0, 200), random.randrange(1, 2), random.randrange(1, 2)] for n in range(200)]
+
+clouds = [[random.randrange(-100, 1600), random.randrange(0, 150), pygame.Surface((800, 180))] for i in range(20)]
     
 # Game loop
 done = False
