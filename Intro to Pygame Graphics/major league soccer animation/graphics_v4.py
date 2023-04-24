@@ -6,7 +6,7 @@ import random
 # Initialize game engine
 pygame.init()
 
-
+int x = 100
 # Window
 SIZE = (800, 600)
 TITLE = "Major League Soccer"
