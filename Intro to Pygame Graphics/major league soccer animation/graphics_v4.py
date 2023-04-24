@@ -1,7 +1,5 @@
 # Imports
-import pygame
-import math
-import random
+import pygame, math, random
 
 # Initialize game engine
 pygame.init()
