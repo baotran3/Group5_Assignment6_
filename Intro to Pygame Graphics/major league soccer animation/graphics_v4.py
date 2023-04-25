@@ -2,8 +2,6 @@
 # Imports
 import pygame, math, random
 
-# Initialize game engine
-pygame.init()
 
 #created a list of tuples so that we do not have to repeat function call "draw.ellipse"
 #by doing this we use a for loop to draw all the clouds and we keep the code clean
