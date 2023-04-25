@@ -37,6 +37,11 @@ def draw_field(screen, stripes, fieldColor, stripeColor):
 
     for stripe in stripes:
         pygame.draw.rect(screen, stripe_color, stripe)
+#function that draws the stars used for night simulation
+def draw_stars(stars, screen, color):
+    for s in stars:
+        pygame.draw.ellipse(screen, color, s)
+
 screen, screenSize = create_window((800, 600), "Major League Soccer")
 
 # Timer
