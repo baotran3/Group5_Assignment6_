@@ -5,6 +5,20 @@ import pygame, math, random
 # Initialize game engine
 pygame.init()
 
+#created a list of tuples so that we do not have to repeat function call "draw.ellipse"
+#by doing this we use a for loop to draw all the clouds and we keep the code clean
+
+def draw_cloud(x, y):
+    cloud_parts = [
+        (x, y + 8, 10, 10),
+        (x + 6, y + 4, 8, 8),
+        (x + 10, y, 16, 16),
+        (x + 20, y + 8, 10, 10),
+        (x + 6, y + 8, 18, 10)
+    ]
+    for part in cloud_parts:
+        pygame.draw.ellipse(SEE_THROUGH, cloud_color, part)
+    
 def create_window(size, title):
     pygame.init()
     screen = pygame.display.set_mode(size)
