@@ -20,7 +20,8 @@ def draw_cloud(x, y):
         pygame.draw.ellipse(SEE_THROUGH, cloud_color, part)
 
 # Create window function allows to create any game window with any size and title
-# we also initialize the game engine in this function    
+# we also initialize the game engine in this function
+
 def create_window(size, title):
     pygame.init()
     screen = pygame.display.set_mode(size)
@@ -29,6 +30,7 @@ def create_window(size, title):
 # Window
 
 #draw_field function draws the field and stripes
+
 def draw_field(screen, stripes, fieldColor, stripeColor):
     #draws the field
     pygame.draw.rect(screen, field_color, [0, 180, 800, 420])
@@ -37,7 +39,9 @@ def draw_field(screen, stripes, fieldColor, stripeColor):
 
     for stripe in stripes:
         pygame.draw.rect(screen, stripe_color, stripe)
+
 #function that draws the stars used for night simulation
+
 def draw_stars(stars, screen, color):
     for s in stars:
         pygame.draw.ellipse(screen, color, s)
