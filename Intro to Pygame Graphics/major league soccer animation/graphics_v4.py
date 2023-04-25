@@ -151,9 +151,15 @@ while not done:
     
     if not day:
     #stars
-        for s in stars:
-            pygame.draw.ellipse(screen, WHITE, s)
-
+        # we pass in parameters to the draw_stars function
+        draw_stars(stars, screen, WHITE)
+    
+    
+    #create a list of stripes to pass into the draw_field function
+    stripes = [[0, 180, 800, 42],
+           [0, 264, 800, 52],
+           [0, 368, 800, 62],
+           [0, 492, 800, 82]]
 
 
 
