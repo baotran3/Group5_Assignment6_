@@ -18,7 +18,9 @@ def draw_cloud(x, y):
     ]
     for part in cloud_parts:
         pygame.draw.ellipse(SEE_THROUGH, cloud_color, part)
-    
+
+# Create window function allows to create any game window with any size and title
+# we also initialize the game engine in this function    
 def create_window(size, title):
     pygame.init()
     screen = pygame.display.set_mode(size)
