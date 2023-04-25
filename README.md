@@ -2,6 +2,12 @@ Assignment #6
 
 Description:
 - The goal of this assignment was to refractor a project, in this case a code for a game, and modify it so that it can be easily maintained, modified, and adapted to new requirements and design references. This was done through forking and collaborative work on the codebase. 
+- Major changes include the creation of a draw clouds function, list comprehension for stars and clouds, createWindow function (added init in it), drawField function, drawStars function, draw_lines function, draw_ellipse function, draw_rectangle function, draw_polygon function, and draw_arc function. 
+- The draw_lines function is used anytime we have to draw lines (the 18 and 6 yard box goal lines, goal lines, out of bounds lines, lights, net, and flags).
+- The draw_ellipse function is used anytime we have to draw ellipses (safety_circle, lights, light pole).
+- The of a draw_rectangle function is used anytime we have to draw rectangles (score board pole, score board, light poles). It also has a feature where we can have multiple colors in one function call.
+- The draw_polygon function is used anytime we have to draw polygons (the stands and flags) We can have multiple sides and colors in one function call
+- The draw_arc function is used anytime we have to draw arcs (arc at the top of the goal box). It works similar to the rectangle since most of its values are from a rect
  
 Installation:
 1. Download GitHub and create an account. If you already have one, log in.
