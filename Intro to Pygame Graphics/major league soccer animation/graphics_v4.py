@@ -27,6 +27,16 @@ def create_window(size, title):
     pygame.display.set_caption(title)
     return screen, size
 # Window
+
+#draw_field function draws the field and stripes
+def draw_field(screen, stripes, fieldColor, stripeColor):
+    #draws the field
+    pygame.draw.rect(screen, field_color, [0, 180, 800, 420])
+
+    #create a list of stripes and draw them using a for loop instead of repeating the same function call
+
+    for stripe in stripes:
+        pygame.draw.rect(screen, stripe_color, stripe)
 screen, screenSize = create_window((800, 600), "Major League Soccer")
 
 # Timer
