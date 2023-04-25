@@ -163,11 +163,8 @@ while not done:
 
 
 
-    pygame.draw.rect(screen, field_color, [0, 180, 800 , 420])
-    pygame.draw.rect(screen, stripe_color, [0, 180, 800, 42])
-    pygame.draw.rect(screen, stripe_color, [0, 264, 800, 52])
-    pygame.draw.rect(screen, stripe_color, [0, 368, 800, 62])
-    pygame.draw.rect(screen, stripe_color, [0, 492, 800, 82])
+    #draws the field using the draw_field function and passes in our defined parameters
+    draw_field(screen, stripes, field_color, stripe_color)
 
 
     '''fence'''
